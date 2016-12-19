@@ -8,20 +8,20 @@
 <body>
 
 <?php
-	require "ls.php";
+	require 'ls.php';
 
 	$files = getFiles();
 	
-	$file = $_GET["q"];
+	$file = $_GET['q'];
 	$index = array_search($file, $files);
 	
 	if ($index === FALSE)
 	{
-		echo "file not found";
+		echo 'file not found';
 	}
 	else
 	{
-		echo "Index: " . $index;
+		echo 'Index: ' . $index;
 	}
 ?>
 

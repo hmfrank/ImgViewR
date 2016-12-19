@@ -10,7 +10,7 @@
 
 	<ul>
 <?php
-		require "ls.php";
+		require 'ls.php';
 
 		$files = getFiles();
 
