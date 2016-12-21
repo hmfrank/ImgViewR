@@ -10,18 +10,41 @@
 <?php
 	require 'ls.php';
 
+	function mod($a, $b)
+	{
+		if ($b <= 0)
+		{
+			return False;
+		}
+		else if ($a < 0)
+		{
+			return $b - (-$a % $b);
+		}
+		else
+		{
+			return $a % $b;
+		}
+	}
+
 	$files = getFiles();
 	
-	$file = $_GET['q'];
+	$file = urldecode($_GET['q']);
 	$index = array_search($file, $files);
 	
 	if ($index === FALSE)
 	{
-		echo 'file not found';
+		echo "\tFile " . htmlentities($file) . " not found.";
 	}
 	else
 	{
-		echo 'Index: ' . $index;
+		$prev = $files[mod($index - 1, count($files))];
+		$next = $files[mod($index + 1, count($files))];
+		
+		echo "<!--\n" . $prev . "\n" . $file . "\n" . $next . "\n-->\n";
+		
+		echo "<a href=\"viewer.php?q=" . urlencode($prev) . "\">prev</a><br/>\n";
+		echo "<img src=\"" . urlencode($file) . "\" alt=\"" . htmlentities($file) . "\" /><br/>\n";
+		echo "<a href=\"viewer.php?q=" . urlencode($next) . "\">next</a><br/>\n";
 	}
 ?>
 
