@@ -33,7 +33,7 @@
 	
 	if ($index === FALSE)
 	{
-		echo "\tFile " . htmlentities($file) . " not found.";
+		echo "\tFile " . htmlentities($file) . " not found.<br/>\n";
 	}
 	else
 	{
@@ -47,6 +47,8 @@
 		echo "<a href=\"viewer.php?q=" . urlencode($next) . "\">next</a><br/>\n";
 	}
 ?>
+
+<a href="./">back</a>
 
 </body>
 </html>
