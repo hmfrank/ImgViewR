@@ -51,5 +51,77 @@
 <a class="bottom left" href="../"><i></i></a>
 <a class="bottom right" href="./"><i></i></a>
 
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		
+		color: white;
+		font-family: sans-serif;
+	}
+
+	body {
+		background-color: #0E0E0E;
+		text-align: center;
+	}
+	
+	img {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		max-width: 100%;
+		max-height: 100%;
+
+		z-index: -1;
+	}
+	
+	.top, .bottom {
+		display: block;
+		position: fixed;
+
+		cursor: pointer;
+	}
+
+	.top {
+		top: 0;
+		bottom: 48px;
+	}
+
+	.bottom {
+		bottom: 0;
+		height: 48px;
+	}
+
+	.left { left: 0; }
+	.right { right: 0; }
+
+	.left, .right {
+		width: 5%;
+		min-width: 48px;
+	}
+
+	.top i, .bottom i {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+
+		width: 48px;
+		height: 48px;
+
+		background-image: url("/res/icons.png");
+		background-repeat: no-repeat;
+		background-size: auto auto;
+	}
+
+	.top.left i { background-position: 0px 0px; }
+	.top.right i { background-position: -48px 0px; }
+	.bottom.left i { background-position: -96px 0px; }
+	.bottom.right i { background-position: -144px 0px; }
+</style>
+
 </body>
 </html>
