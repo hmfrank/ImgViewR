@@ -44,7 +44,7 @@
 	}
 ?>
 
-<img src="<?php echo urlencode($file) ?>" alt="<?php echo htmlentities($file) ?>" />
+<a href="<?php echo urlencode($file) ?>"><img src="low/<?php echo urlencode($file) ?>" alt="<?php echo htmlentities($file) ?>" /></a>
 
 <a class="top left" href="viewer.php?q=<?php echo urlencode($prev) ?>"><i></i></a>
 <a class="top right" href="viewer.php?q=<?php echo urlencode($next) ?>"><i></i></a>
