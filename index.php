@@ -13,9 +13,8 @@
 	<a href="full_res.zip">Download Full Resolution (420 MB)</a><br/>
 	<a href="low_res.zip">Download Medium Resolution (42 MB)</a><br/>
 </p>
-<p>
-	<a href="../">back</a>
-</p>
+
+<p><a href="../">back</a></p>
 
 <p>
 <?php
@@ -30,9 +29,8 @@
 ?>
 </p>
 
-<p>
-	<a href="https://github.com/hmfrank/" target="_blank">source code</a>
-</p>
+<p><a href="../">back</a></p>
+<p><a href="https://github.com/hmfrank/" target="_blank"><img src="res/github.png" id="github" alt="source code" /></a></p>
 
 <style>
 	* {
@@ -51,6 +49,11 @@
 		width: 96px;
 		height: 96px;
 	}
+	
+	#github {
+		width: 48px;
+		height: 48px;
+	}
 
 	a:link, a:link * { color: blue; }
 	a:visited, a:visited * { color: purple; }
@@ -58,3 +61,5 @@
 
 </body>
 </html>
+
+<!-- TODO: resize github icon -->
