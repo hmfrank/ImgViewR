@@ -33,22 +33,23 @@
 	
 	if ($index === FALSE)
 	{
-		echo "\tFile " . htmlentities($file) . " not found.<br/>\n";
+		$file = "file not found";
+		$prev = $files[count($files) - 1];
+		$next = $files[0];
 	}
 	else
 	{
 		$prev = $files[mod($index - 1, count($files))];
 		$next = $files[mod($index + 1, count($files))];
-		
-		echo "<!--\n" . $prev . "\n" . $file . "\n" . $next . "\n-->\n";
-		
-		echo "<a href=\"viewer.php?q=" . urlencode($prev) . "\">prev</a><br/>\n";
-		echo "<img src=\"" . urlencode($file) . "\" alt=\"" . htmlentities($file) . "\" /><br/>\n";
-		echo "<a href=\"viewer.php?q=" . urlencode($next) . "\">next</a><br/>\n";
 	}
 ?>
 
-<a href="./">back</a>
+<img src="<?php echo urlencode($file) ?>" alt="<?php echo htmlentities($file) ?>" />
+
+<a class="top left" href="viewer.php?q=<?php echo urlencode($prev) ?>"><i></i></a>
+<a class="top right" href="viewer.php?q=<?php echo urlencode($next) ?>"><i></i></a>
+<a class="bottom left" href="../"><i></i></a>
+<a class="bottom right" href="./"><i></i></a>
 
 </body>
 </html>

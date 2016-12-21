@@ -9,6 +9,14 @@
 
 <h1>ImgViewR Sample Galery</h1>
 
+<p>
+	<a href="full_res.zip">Download Full Resolution (420 MB)</a><br/>
+	<a href="low_res.zip">Download Medium Resolution (42 MB)</a><br/>
+</p>
+<p>
+	<a href="../">back</a>
+</p>
+
 <ul>
 <?php
 	require 'ls.php';
@@ -21,6 +29,10 @@
 	}
 ?>
 </ul>
+
+<p>
+	<a href="https://github.com/hmfrank/" target="_blank">source code</a>
+</p>
 
 </body>
 </html>
