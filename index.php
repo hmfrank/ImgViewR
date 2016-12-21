@@ -17,7 +17,7 @@
 	<a href="../">back</a>
 </p>
 
-<ul>
+<p>
 <?php
 	require 'ls.php';
 
@@ -25,14 +25,36 @@
 
 	foreach ($files as $file)
 	{
-		echo "\t<li><a href=\"viewer.php?q=" . urlencode($file) . "\">" . htmlentities($file) . "</a></li>\n";
+		echo "\t<a href=\"viewer.php?q=" . urlencode($file) . "\"><img src=\"" . urlencode($file) . "\" alt=\"" . htmlentities($file) . " \" /></a>\n";
 	}
 ?>
-</ul>
+</p>
 
 <p>
 	<a href="https://github.com/hmfrank/" target="_blank">source code</a>
 </p>
+
+<style>
+	* {
+		color: white;
+		font-family: sans-serif;
+	}
+
+	body {
+		text-align: center;
+		background-color: #0E0E0E;
+	}
+
+	img {
+		margin: 3px;
+		border: 0;
+		width: 96px;
+		height: 96px;
+	}
+
+	a:link, a:link * { color: blue; }
+	a:visited, a:visited * { color: purple; }
+</style>
 
 </body>
 </html>
