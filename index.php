@@ -29,8 +29,8 @@
 ?>
 </p>
 
+<p><a href="https://github.com/hmfrank/ImgViewR/" target="_blank">source code</a></p>
 <p><a href="../">back</a></p>
-<p><a href="https://github.com/hmfrank/" target="_blank"><img src="res/github.png" id="github" alt="source code" /></a></p>
 
 <style>
 	* {
@@ -50,16 +50,9 @@
 		height: 96px;
 	}
 	
-	#github {
-		width: 48px;
-		height: 48px;
-	}
-
 	a:link, a:link * { color: blue; }
 	a:visited, a:visited * { color: purple; }
 </style>
 
 </body>
 </html>
-
-<!-- TODO: resize github icon -->

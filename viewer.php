@@ -10,6 +10,7 @@
 <?php
 	require 'ls.php';
 
+	// mod function that also works for negative numbers, too
 	function mod($a, $b)
 	{
 		if ($b <= 0)
@@ -125,3 +126,6 @@
 
 </body>
 </html>
+
+<!-- TODO: Navigations icons huebscher machen -->
+<!-- TODO: mit Pfeiltasten navigieren -->
