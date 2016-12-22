@@ -1,6 +1,6 @@
 <?php
 
-define('CACHE_FILE', '/dev/shm/cache.txt');
+define('CACHE_FILE', '/dev/shm/imgviewr_cache.txt');
 $extensions = [ 'jpeg', 'jpg', 'png'];
 
 // returns true, if the given file is an image file

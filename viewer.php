@@ -58,12 +58,12 @@
 		padding: 0;
 		border: 0;
 		
-		color: white;
+		color: #FFF;
 		font-family: sans-serif;
 	}
 
 	body {
-		background-color: #0E0E0E;
+		background-color: #111;
 		text-align: center;
 	}
 	
@@ -128,4 +128,3 @@
 </html>
 
 <!-- TODO: Navigations icons huebscher machen -->
-<!-- TODO: mit Pfeiltasten navigieren -->

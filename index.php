@@ -34,13 +34,13 @@
 
 <style>
 	* {
-		color: white;
+		color: #FFF;
 		font-family: sans-serif;
 	}
 
 	body {
 		text-align: center;
-		background-color: #0E0E0E;
+		background-color: #111;
 	}
 
 	img {
