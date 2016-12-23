@@ -49,7 +49,7 @@
 		width: 96px;
 		height: 96px;
 	}
-	
+
 	a:link, a:link * { color: blue; }
 	a:visited, a:visited * { color: purple; }
 </style>

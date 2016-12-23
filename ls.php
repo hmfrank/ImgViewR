@@ -33,7 +33,7 @@ function readDirectory()
 	$list = scandir('.');
 	$list = array_filter($list, 'isImage');
 	sort($list);
-	
+
 	return $list;
 }
 
@@ -48,13 +48,13 @@ function writeCache($list)
 function getFiles()
 {
 	$list = readCache();
-	
+
 	if ($list === FALSE)
 	{
 		$list = readDirectory();
 		writeCache($list);
 	}
-	
+
 	return $list;
 }
 

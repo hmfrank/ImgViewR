@@ -28,10 +28,10 @@
 	}
 
 	$files = getFiles();
-	
+
 	$file = urldecode($_GET['q']);
 	$index = array_search($file, $files);
-	
+
 	if ($index === FALSE)
 	{
 		$file = "file not found";
@@ -57,7 +57,7 @@
 		margin: 0;
 		padding: 0;
 		border: 0;
-		
+
 		color: #FFF;
 		font-family: sans-serif;
 	}
@@ -66,7 +66,7 @@
 		background-color: #111;
 		text-align: center;
 	}
-	
+
 	img {
 		position: fixed;
 		top: 0;
@@ -79,7 +79,7 @@
 
 		z-index: -1;
 	}
-	
+
 	.top, .bottom {
 		display: block;
 		position: fixed;
@@ -126,5 +126,3 @@
 
 </body>
 </html>
-
-<!-- TODO: Navigations icons huebscher machen -->
