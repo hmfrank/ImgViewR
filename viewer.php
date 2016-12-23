@@ -113,7 +113,7 @@
 		width: 48px;
 		height: 48px;
 
-		background-image: url("/res/icons.png");
+		background-image: url("res/icons.png");
 		background-repeat: no-repeat;
 		background-size: auto auto;
 	}
