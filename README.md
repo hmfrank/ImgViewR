@@ -29,8 +29,8 @@ To improve performance however, this is only done on the first request, then the
 Specifically it is stored in `/dev/shm/imgviewr_cache.txt`. Btw. `/dev/shm/` is a memory-mounted file system.
 
 There are two problems with this approach, you have to consider:
-1. When you add or remove images to your galery, the cache file is not updated.  
-   **Solution:** Just call `rc.php` once, which will reset the cache file.
-2. You can only have one galery on one web server.  
-   **Solution:** Change the name of the cache file, by changing the constant `CACHE_FILE` in `ls.php`.
-   By giving each galery a different cache file name, they will all use their own cache file.
+* When you add or remove images to your galery, the cache file is not updated.  
+  **Solution:** Just call `rc.php` once, which will reset the cache file.
+* You can only have one galery on one web server.  
+  **Solution:** Change the name of the cache file, by changing the constant `CACHE_FILE` in `ls.php`.
+  By giving each galery a different cache file name, they will all use their own cache file.
