@@ -10,8 +10,8 @@
 <h1>ImgViewR Sample Galery</h1>
 
 <p>
-	<a href="full_res.zip">Download Full Resolution (420 MB)</a><br/>
-	<a href="low_res.zip">Download Medium Resolution (42 MB)</a><br/>
+	<a href="full_res.zip">Download Full Resolution (<?php echo round(filesize("full_res.zip") / pow(2, 20)) ?> MB)</a><br/>
+	<a href="low_res.zip">Download Medium Resolution (<?php echo round(filesize("low_res.zip") / pow(2, 20)) ?> MB)</a><br/>
 </p>
 
 <p><a href="../">back</a></p>
