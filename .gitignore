@@ -1,7 +1,10 @@
 /*
 
-!.gitignore
 !*.php
+
+!.gitignore
+!LICENSE
+!README.md
+
 !res/
 !res/*
-!README.md
