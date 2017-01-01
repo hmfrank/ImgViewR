@@ -24,7 +24,7 @@
 
 	foreach ($files as $file)
 	{
-		echo "\t<a href=\"viewer.php?q=" . urlencode($file) . "\"><img src=\"thumbs/" . urlencode($file) . "\" alt=\"" . htmlentities($file) . " \" /></a>\n";
+		echo "\t<a href=\"viewer.php#" . urlencode($file) . "\"><img src=\"thumbs/" . urlencode($file) . "\" alt=\"" . htmlentities($file) . " \" /></a>\n";
 	}
 ?>
 </p>

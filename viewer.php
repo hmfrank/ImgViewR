@@ -7,50 +7,72 @@
 </head>
 <body>
 
-<?php
-	require 'ls.php';
+<img alt="Image not found!" id="main" onclick="show()" />
 
-	// mod function that also works for negative numbers, too
-	function mod($a, $b)
-	{
-		if ($b <= 0)
-		{
-			return False;
-		}
-		else if ($a < 0)
-		{
-			return $b - (-$a % $b);
-		}
-		else
-		{
-			return $a % $b;
-		}
-	}
-
-	$files = getFiles();
-
-	$file = urldecode($_GET['q']);
-	$index = array_search($file, $files);
-
-	if ($index === FALSE)
-	{
-		$file = "file not found";
-		$prev = $files[count($files) - 1];
-		$next = $files[0];
-	}
-	else
-	{
-		$prev = $files[mod($index - 1, count($files))];
-		$next = $files[mod($index + 1, count($files))];
-	}
-?>
-
-<a href="<?php echo urlencode($file) ?>"><img src="low/<?php echo urlencode($file) ?>" alt="<?php echo htmlentities($file) ?>" /></a>
-
-<a class="top left" href="viewer.php?q=<?php echo urlencode($prev) ?>"><i></i></a>
-<a class="top right" href="viewer.php?q=<?php echo urlencode($next) ?>"><i></i></a>
+<div class="top left" onclick="prev()"><i></i></div>
+<div class="top right" onclick="next()"><i></i></div>
 <a class="bottom left" href="../"><i></i></a>
 <a class="bottom right" href="./"><i></i></a>
+
+<script>
+	var list = <?php require 'ls.php'; echo json_encode(getFiles()); ?>;
+	var file;
+	
+	function refresh()
+	{
+		document.getElementById("main").setAttribute("src", "low/" + encodeURI(file));
+		document.getElementById("main").setAttribute("alt", encodeURI(file));
+		window.location.hash = encodeURI(file);
+	}
+	
+	function hashchange(e)
+	{
+		file = undefined;
+	
+		if (window.location.hash)
+			file = decodeURI(window.location.hash.substring(1));
+	
+		if (list.indexOf(file) < 0)
+		{
+			file = list[0];
+			window.location.hash = encodeURI(file);
+		}
+		
+		refresh();
+	}
+	
+	function getnextprev(file, next)
+	{
+		var index = list.indexOf(file);
+		
+		index = next ? index + 1 : index - 1;
+		
+		if (index < 0) index = list.length - 1;
+		else if (index >= list.length) index = 0;
+		
+		return list[index];
+	}
+
+	function prev()
+	{
+		file = getnextprev(file, false);
+		refresh();
+	}
+
+	function next()
+	{
+		file = getnextprev(file, true);
+		refresh();
+	}
+
+	function show()
+	{
+		window.location.href = encodeURI(file);
+	}
+	
+	window.addEventListener("hashchange", hashchange);
+	hashchange(null);
+</script>
 
 <style>
 	* {
