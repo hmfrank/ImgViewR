@@ -7,49 +7,54 @@
 </head>
 <body>
 
-<img alt="Image not found!" id="main" onclick="show()" />
+<img alt="" id="main" onclick="show()" />
 
 <div class="top left" onclick="prev()"><i></i></div>
 <div class="top right" onclick="next()"><i></i></div>
 <a class="bottom left" href="../"><i></i></a>
 <a class="bottom right" href="./"><i></i></a>
 
+<noscript>
+	<p>JAVASCRIPT AN MACHEN DU HURENSOHN!!!</p>
+	<p>If you don't mind, I would politely ask you to enable Javascript, please.</p>
+</noscript>
+
 <script>
 	var list = <?php require 'ls.php'; echo json_encode(getFiles()); ?>;
 	var file;
-	
+
 	function refresh()
 	{
 		document.getElementById("main").setAttribute("src", "low/" + encodeURI(file));
 		document.getElementById("main").setAttribute("alt", encodeURI(file));
 		window.location.hash = encodeURI(file);
 	}
-	
+
 	function hashchange(e)
 	{
 		file = undefined;
-	
+
 		if (window.location.hash)
 			file = decodeURI(window.location.hash.substring(1));
-	
+
 		if (list.indexOf(file) < 0)
 		{
 			file = list[0];
 			window.location.hash = encodeURI(file);
 		}
-		
+
 		refresh();
 	}
-	
+
 	function getnextprev(file, next)
 	{
 		var index = list.indexOf(file);
-		
+
 		index = next ? index + 1 : index - 1;
-		
+
 		if (index < 0) index = list.length - 1;
 		else if (index >= list.length) index = 0;
-		
+
 		return list[index];
 	}
 
@@ -69,7 +74,7 @@
 	{
 		window.location.href = encodeURI(file);
 	}
-	
+
 	window.addEventListener("hashchange", hashchange);
 	hashchange(null);
 </script>
@@ -89,7 +94,15 @@
 		text-align: center;
 	}
 
-	img {
+	noscript p {
+		margin-bottom: 1em;
+
+		color: #F00;
+		font-size: xx-large;
+		font-weight: bold;
+	}
+
+	#main {
 		position: fixed;
 		top: 0;
 		bottom: 0;
