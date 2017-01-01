@@ -7,7 +7,11 @@
 </head>
 <body>
 
-<img alt="" id="main" onclick="show()" />
+<script>
+	
+</script>
+
+<img alt="" id="main" onclick="show()" onload="preload()" />
 
 <div class="top left" onclick="prev()"><i></i></div>
 <div class="top right" onclick="next()"><i></i></div>
@@ -21,7 +25,7 @@
 
 <script>
 	var list = <?php require 'ls.php'; echo json_encode(getFiles()); ?>;
-	var file;
+	var file, p;
 
 	function refresh()
 	{
@@ -75,9 +79,15 @@
 		window.location.href = encodeURI(file);
 	}
 
+	function preload()
+	{
+		p = new Image();
+		p.src = getnextprev(file, true);
+	}
+
 	window.addEventListener("hashchange", hashchange);
 	hashchange(null);
-	
+
 	document.onkeydown = function keydown(e)
 	{
 		if (e.keyCode == '37') prev();
