@@ -77,6 +77,12 @@
 
 	window.addEventListener("hashchange", hashchange);
 	hashchange(null);
+	
+	document.onkeydown = function keydown(e)
+	{
+		if (e.keyCode == '37') prev();
+		else if (e.keyCode == '39') next();
+	};
 </script>
 
 <style>
